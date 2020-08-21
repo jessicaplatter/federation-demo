@@ -1,0 +1,25 @@
+{
+  "name": "federation-demo",
+  "main": "gateway.js",
+  "scripts": {
+    "start-gateway": "export ENGINE_API_KEY=service:dev-test-nikhil:zbyoNERlzP_rk3jdE75ayQ && nodemon gateway.js",
+    "start-service-accounts": "nodemon services/accounts/index.js",
+    "start-service-reviews": "nodemon services/reviews/index.js",
+    "start-service-products": "nodemon services/products/index.js",
+    "start-service-inventory": "nodemon services/inventory/index.js",
+    "start-services": "concurrently \"npm:start-service-*\"",
+    "postinstall": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "concurrently": "latest",
+    "graphql-import": "^1.0.2",
+    "graphql.macro": "^1.4.2",
+    "lerna": "latest",
+    "nodemon": "latest"
+  },
+  "dependencies": {
+    "@apollo/gateway": "latest",
+    "apollo-server": "latest",
+    "graphql": "latest"
+  }
+}
